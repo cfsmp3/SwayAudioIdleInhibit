@@ -9,14 +9,11 @@
 #endif
 
 class Idle {
-	struct sd_bus *bus = nullptr;
 	int fd = -1;
 
 	void block();
 	void release_block();
 
   public:
-	Idle();
-
 	void update(bool isRunning);
 };
