@@ -1,3 +1,11 @@
+sway-audio-idle-inhibit (2.0.5) jammy; urgency=medium
+
+  [ rego-port-bot ]
+  * fix: re-enable the service when the stale link was removed by hand
+  * fix: leave room for the end of the ignored source outputs list
+
+ -- Regolith Linux <regolith.linux@gmail.com>  Sat, 14 Nov 2026 10:55:34 -0800
+
 sway-audio-idle-inhibit (2.0.4) jammy; urgency=medium
 
   * fix: don't abort when the first inhibit comes after the bus auth timeout
