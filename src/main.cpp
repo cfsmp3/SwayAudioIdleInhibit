@@ -34,7 +34,8 @@ int main(int argc, char *argv[]) {
 	bool printSource = false;
 	bool printSink = false;
 
-	char *ignoredSourceOutputs[MAX_IGNORED_SOURCE_OUTPUTS] = {nullptr};
+	// one more slot for the nullptr that ends the list, also after MAX names
+	char *ignoredSourceOutputs[MAX_IGNORED_SOURCE_OUTPUTS + 1] = {nullptr};
 	int ignoredSourceOutputsCount = 0;
 
 	if (argc > 1) {
