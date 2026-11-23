@@ -36,7 +36,7 @@ logind_dep = dependency('lib' + get_option('logind-provider'), required: true)
 
 add_project_arguments('-D', 'HAVE_' + get_option('logind-provider').to_upper(), language: 'cpp')
 
-executable(
+exe = executable(
 	'sway-audio-idle-inhibit',
 	files(
 		'./src/data.cpp',
@@ -50,6 +50,13 @@ executable(
 		logind_dep,
 	],
 	install: true,
+)
+
+test(
+	'lost-stream-events',
+	find_program('tests/lost-stream-events.sh'),
+	args: [exe],
+	timeout: 300,
 )
 
 install_data('sway-audio-idle-inhibit.service', install_dir : '/usr/lib/systemd/user' )
