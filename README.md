@@ -3,6 +3,13 @@
 Prevents swayidle/hypridle from sleeping while any application is outputting or
 receiving audio. Requires systemd/elogind inhibit support.
 
+When gnome-session's session manager (`org.gnome.SessionManager`) is running on
+the session bus, as in GNOME, GNOME Flashback and Regolith sessions, idle is
+inhibited through it, so the idle handling of those sessions (X11 included)
+honours it too. Otherwise a systemd/elogind "idle" inhibitor lock is taken. If
+the session manager starts, stops or refuses the inhibitor while audio is
+playing, the inhibitor moves to the other one.
+
 This only works for Pulseaudio / Pipewire Pulse
 
 ## Install

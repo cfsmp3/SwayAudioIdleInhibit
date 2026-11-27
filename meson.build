@@ -48,6 +48,7 @@ executable(
 	dependencies: [
 		dependency('libpulse', version: '>= 15.0'),
 		logind_dep,
+		dependency('threads'),
 	],
 	install: true,
 )
